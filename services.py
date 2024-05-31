@@ -3,8 +3,8 @@
 # i made to load services, including
 # the "rich" module to color stuff and
 # probably i'll expand this later and so on
-import importlib.util
-import log, importlib
+import importlib
+import log
 logging = log.pyLOG()
 
 def load_service(dir: str, module_name: str):
