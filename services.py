@@ -1,4 +1,8 @@
 #--services.py--#
+# purpose: this uses the epic log system
+# i made to load services, including
+# the "rich" module to color stuff and
+# probably i'll expand this later and so on
 import importlib.util
 import log, importlib
 logging = log.pyLOG()
