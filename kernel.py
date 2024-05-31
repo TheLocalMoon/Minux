@@ -12,21 +12,33 @@ from datetime import datetime
 # version, sorry
 
 def gen_build():
+    """_summary_
+
+    Returns:
+        _type_: _description_
+    """    
     time = datetime.now()
     build = time.strftime("%d")[1:] + time.strftime("%b")[0].upper() + time.strftime("%m")
     return build
 
-__VER__ = "v0.01"
+__VER__ = "v0.02"
 __BUILD__ = gen_build()
 
 class Kernel:
     def __init__(self) -> None:
+        """_summary_
+        """        
         print(f"Minux {__VER__} ({__BUILD__})")
         while True:
             command = input(">> ")
             self.execute_command(command.lower())
 
-    def execute_command(self, command: str):
+    def execute_command(self, command: str): 
+        """_summary_
+
+        Args:
+            command (str): _description_
+        """        
         if command.startswith("echo "):
             text = command[len("echo "):]
             print(text)
@@ -46,3 +58,6 @@ CLEAR/CLS{' '*6}Clears the screen
             # but clear wouldn't for the first one
         else:
             print(f"unknown indetifier {command}, do HELP for the list of commands")
+            return False
+            
+        return True

@@ -5,7 +5,11 @@ import kernel
 import os
 
 class Minux:
-    def __init__(self) -> None:
+    """_summary_
+    """    
+    def __init__(self) -> None: 
+        """_summary_
+        """        
         self.utils = services.load_service("services", "utils.py")
         os.system('cls' if os.name == 'nt' else 'clear')
         self.kernel = kernel.Kernel() # no way, it starts the command prompt!
