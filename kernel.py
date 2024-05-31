@@ -26,5 +26,12 @@ class Kernel:
         if command.startswith("echo "):
             text = command[len("echo "):]
             print(text)
+        elif command.startswith("help"):
+            # YLM: okay, this one is gonna take like
+            # 58954848 lines of code, be ready
+            print(f"""[COMMAND LIST]
+HELP{' '*6}Shows this list
+ECHO{' '*6}Repeats
+""")
         else:
             print(f"unknown indetifier {command}, do HELP for the list of commands")

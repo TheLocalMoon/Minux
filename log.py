@@ -20,7 +20,7 @@ class pyLOG:
         print(f"[bold yellow][ WARN ][/bold yellow] [bold white]{text}[/bold white]")
         
     def error(self, text: str) -> None:
-        print(f"[bold red][ YOU  ][/bold red] [bold white]{text}[/bold white]")
+        print(f"[bold red][ ERROR ][/bold red] [bold white]{text}[/bold white]")
     
     def disable(self, state: bool):
         self.disabled = state
