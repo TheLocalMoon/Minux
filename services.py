@@ -7,16 +7,7 @@ import importlib
 import log
 logging = log.pyLOG()
 
-def load_service(dir: str, module_name: str):
-    """_summary_
-
-    Args:
-        dir (str): _description_
-        module_name (str): _description_
-
-    Returns:
-        _type_: _description_
-    """    
+def load_service(dir: str, module_name: str): 
     try:
         full_path = f"{dir}/{module_name}"
         logging.none(f"loading {full_path} . . .")

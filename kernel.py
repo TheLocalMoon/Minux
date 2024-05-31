@@ -11,38 +11,26 @@ from datetime import datetime
 # because it was fucking up the
 # version, sorry
 
-def gen_build():
-    """_summary_
-
-    Returns:
-        _type_: _description_
-    """    
+def gen_build(): 
     time = datetime.now()
     build = time.strftime("%d")[1:] + time.strftime("%b")[0].upper() + time.strftime("%m")
     return build
 
-__VER__ = "v0.02"
+__VER__ = "v0.03-beta"
 __BUILD__ = gen_build()
 
 class Kernel:
-    def __init__(self) -> None:
-        """_summary_
-        """        
+    def __init__(self) -> None:       
         print(f"Minux {__VER__} ({__BUILD__})")
         while True:
             command = input(">> ")
-            self.execute_command(command.lower())
+            self.execute_command(command)
 
-    def execute_command(self, command: str): 
-        """_summary_
-
-        Args:
-            command (str): _description_
-        """        
-        if command.startswith("echo "):
+    def execute_command(self, command: str):     
+        if command.lower().startswith("echo "):
             text = command[len("echo "):]
             print(text)
-        elif command.startswith("help"):
+        elif command.lower().startswith("help"):
             # YLM: okay, this one is gonna take like
             # 58954848 lines of code, be ready
             print(f"""[COMMAND LIST]
@@ -50,7 +38,7 @@ HELP{' '*6}Shows this list
 ECHO{' '*6}Repeats
 CLEAR/CLS{' '*6}Clears the screen
 """)
-        elif command.startswith("clear") or command.startswith("cls"):
+        elif command.lower().startswith("clear") or command.lower().startswith("cls"):
             system('cls' if name == 'nt' else 'clear')
             # ^ i had to do this trick because most people
             # are either using NT or Unix-like systems, and
