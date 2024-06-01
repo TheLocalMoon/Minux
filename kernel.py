@@ -13,13 +13,12 @@ from datetime import datetime
 
 def gen_build(): 
     time = datetime.now()
-    build = time.strftime("%d")[1:] + time.strftime("%b")[0].upper() + time.strftime("%m")
-    return build
+    return time.strftime("%d")[1:] + time.strftime("%b")[0].upper() + time.strftime("%m")
 
 __VER__ = "v0.03-beta"
 __BUILD__ = gen_build()
 
-class Kernel:
+class Kernel():
     def __init__(self) -> None:       
         print(f"Minux {__VER__} ({__BUILD__})")
         while True:
@@ -27,7 +26,7 @@ class Kernel:
             self.execute_command(command)
 
     def execute_command(self, command: str):     
-        if command.lower().startswith("echo "):
+        if command.lower().startswith("echo"):
             text = command[len("echo "):]
             print(text)
         elif command.lower().startswith("help"):
@@ -40,10 +39,6 @@ CLEAR/CLS{' '*6}Clears the screen
 """)
         elif command.lower().startswith("clear") or command.lower().startswith("cls"):
             system('cls' if name == 'nt' else 'clear')
-            # ^ i had to do this trick because most people
-            # are either using NT or Unix-like systems, and
-            # just cls wouldn't work for the second type,
-            # but clear wouldn't for the first one
         else:
             print(f"unknown indetifier {command}, do HELP for the list of commands")
             return False

@@ -6,7 +6,7 @@
 # module doesn't count)
 from rich import print
 
-class pyLOG:   
+class pyLOG():   
     def __init__(self) -> None:       
         self.disabled = False
         
